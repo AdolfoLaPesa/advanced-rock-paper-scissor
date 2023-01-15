@@ -1,14 +1,14 @@
 
-
+const MAPPING = require("./constants");
 const MOVES = Object.keys(MAPPING);
 
-function MorrraCinese (error, result){
+function RockPaperScissor (error, result){
 
     let  playerMoves;
     let  npcMoves;
 
     if(error){
-        console.log("C'è stato un errore: " + error.message);
+        console.log("Error! " + error.message);
         process.exit(1);
     }
 
@@ -16,7 +16,7 @@ function MorrraCinese (error, result){
 
     
     npcMoves = MOVES[Math.floor(Math.random() * MOVES.length)];
-    console.log("La mossa del computer: " + npcMoves[0].toUpperCase() + npcMoves.slice(1));
+    console.log("The Bot used: " + npcMoves[0].toUpperCase() + npcMoves.slice(1));
     
     
     console.log("Result: " + launchCompare(playerMoves, npcMoves));
@@ -32,4 +32,4 @@ function MorrraCinese (error, result){
     }
 }
 
-module.exports = MorrraCinese;
+module.exports = RockPaperScissor;
